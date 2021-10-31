@@ -3,4 +3,9 @@ from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Hello Python!")
+    return render(request, 'twitter/index.html')
+
+
+def base(request):
+    return render(request, 'twitter/base.html')
+
