@@ -4,7 +4,7 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Mansalva&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'twitter/styles.css' %}">
     <meta charset="UTF-8">
     <title>
@@ -30,10 +30,20 @@
         </div>
     </header>
     {% block body %}
-    <h1>Woah... So that's the infamous base.html file? 🤔<br>Cool.</h1>
+    <div class="main-container">
+        <aside class="left-aside">
+            Left aside
+        </aside>
+        <main>
+            Main content
+        </main>
+        <aside class="right-aside">
+            Right aside
+        </aside>
+    </div>
     {% endblock %}
     <footer>
-
+        <p>Made with 💕</p>
     </footer>
 </body>
 </html>
