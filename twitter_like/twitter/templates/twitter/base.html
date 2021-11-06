@@ -2,6 +2,9 @@
 {% load static %}
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'twitter/styles.css' %}">
     <meta charset="UTF-8">
     <title>
@@ -11,8 +14,26 @@
     </title>
 </head>
 <body>
+    <header>
+        <div class="left-side-header">
+            <a href="{% url 'index'%}">
+                <img class="chirper-logo" src="{% static 'twitter/media/chirp.png' %}" alt="Chirper Logo 🐦">
+                <p class="meta">Very close to Twitter, but not Twitter.</p>
+            </a>
+        </div>
+        <div class="right-side-header">
+            <nav class="header-links">
+                <a href="#"><p>Home</p></a>
+                <a href="#"><p>About</p></a>
+                <a href="https://github.com/vitortamberlini/twitter-like" target="_blank"><p>Code</p></a>
+            </nav>
+        </div>
+    </header>
     {% block body %}
     <h1>Woah... So that's the infamous base.html file? 🤔<br>Cool.</h1>
     {% endblock %}
+    <footer>
+
+    </footer>
 </body>
 </html>
