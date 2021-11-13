@@ -12,5 +12,12 @@ def base(request):
 
 
 def posts(request):
-    all_posts = Post.objects.all()
-    return render(request, 'twitter/posts.html')
+    all_posts = list(Post.objects.all())
+
+    context = {
+        'posts': all_posts
+    }
+
+    print(all_posts)
+
+    return render(request, 'twitter/posts.html', context=context)
