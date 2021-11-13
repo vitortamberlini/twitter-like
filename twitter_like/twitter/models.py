@@ -22,8 +22,11 @@ class Post(models.Model):
     def __str__(self):
         return f'{self.title} - {self.author}'
 
-#    @property
-#    def author(self):
-#        if not self._author:
-#            return 'User Deleted'
-#        return self._author
+    def to_dict(self):
+        object_as_dict = {
+            'title': self.title,
+            'author': self.author.name,
+            'pub_date': str(self.pub_date)
+        }
+
+        return object_as_dict
