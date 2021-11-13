@@ -13,15 +13,17 @@ class User(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=60)
     pub_date = models.DateTimeField(default=timezone.now)
-    _author = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey('User',
+                               on_delete=models.SET_NULL,
+                               null=True,
+                               default="User Deleted")
     content = models.TextField()
 
     def __str__(self):
         return f'{self.title} - {self.author}'
 
-    @property
-    def author(self):
-        if not self._author:
-            return 'User Deleted'
-        return self._author
-
+#    @property
+#    def author(self):
+#        if not self._author:
+#            return 'User Deleted'
+#        return self._author
