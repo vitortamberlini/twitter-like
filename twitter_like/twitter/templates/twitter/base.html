@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Mansalva&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'twitter/base/styles.css' %}">
+    {% block head %}
+    {% endblock %}
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        The Base Title
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <header>
+        <div class="left-side-header">
+            <a href="{% url 'index'%}">
+                <img class="chirper-logo" src="{% static 'twitter/media/chirp.png' %}" alt="Chirper Logo 🐦">
+                <p class="meta">Very close to Twitter, but not Twitter.</p>
+            </a>
+        </div>
+        <div class="right-side-header">
+            <nav class="header-links">
+                <a href="#"><p>Home</p></a>
+                <a href="#"><p>About</p></a>
+                <a href="https://github.com/vitortamberlini/twitter-like" target="_blank"><p>Code</p></a>
+            </nav>
+        </div>
+    </header>
+    {% block body %}
+    <div class="main-container">
+        <aside class="left-aside">
+            Left aside
+        </aside>
+        <main>
+            Main content
+        </main>
+        <aside class="right-aside">
+            Right aside
+        </aside>
+    </div>
+    {% endblock %}
+    <footer>
+        <p>Made with 💕</p>
+    </footer>
+</body>
+</html>
