@@ -1,0 +1,27 @@
+{% extends "twitter/base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'twitter/posts/styles.css' %}">
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/infinite.min.js' %}"></script>
+<!-- <script src="{% static 'js/infiniteScroll.js'%}"></script> -->
+{% endblock %}
+
+{% block title %}Index Page{% endblock %}
+
+{% block body %}
+<h1>Here we should see some posts. I wonder where they are... 🤔</h1>
+<p>
+    <main class='infinite-container'>
+        {% include 'twitter/_posts.html' with posts=posts %}
+    </main>
+    <a class="infinite-more-link" href="?page={{ posts.next_page_number }}"></a>
+</p>
+<script>
+    const infinite = new Waypoint.Infinite({
+        element: $('.infinite-container')[0],
+        offset: 'footer',
+    });
+</script>
+{% endblock %}
